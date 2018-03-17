@@ -10,14 +10,15 @@ from copy import deepcopy
 # keeps track of the
 child_industries_record = {}
 leaf = {"name": "", "children": []}
+last_child = {"name": "", "size":""}
 
 
 def initialise(a):
     new_indus_leaf = deepcopy(leaf)
     new_indus_leaf_two = deepcopy(leaf)
-    new_indus_leaf_three = deepcopy(leaf)
+    new_indus_leaf_three = deepcopy(last_child)
     new_indus_leaf_three["name"] = "Total no of jobs: " + a["numberofpositions"]
-    new_indus_leaf_three["children"] = []
+    new_indus_leaf_three["size"] = 1234
     new_indus_leaf_two["name"] = a["skills"]
     new_indus_leaf_two["children"] = [new_indus_leaf_three]
     new_indus_leaf["name"] = a["industry"]
